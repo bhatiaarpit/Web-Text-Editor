@@ -1,37 +1,39 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     /* background-color: #040e22; */
     background-image: url(bg.jpg);
     background-size: cover;
 }
 
-.container{
+.container {
     background-color: #ececec;
-    width: 90rem;
-    padding: 10px 20px;
+    width: 90%;
+    max-width: 90rem; /* Added max-width */
+    padding: 10px;
     position: absolute;
-    transform: (-50%, -50%);
+    /* transform: (-50%, -50%); */ /* Removed */
     left: 3%;
     top: 6%;
     border-radius: 10px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.404);
 }
 
-.headingtext{
-    padding-left: 43%;
+.headingtext {
+    text-align: center; /* Centered the text */
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.options{
+.options {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center; /* Centered the buttons */
     gap: 15px;
     padding: 5px;
     background-color: rgb(255, 255, 255);
@@ -40,7 +42,7 @@ body{
     border-radius: 10px;
 }
 
-button{
+button {
     height: 28px;
     width: 28px;
     display: grid;
@@ -58,10 +60,12 @@ select {
     border-radius: 3px;
 }
 
-.options label, .options select{
+.options label,
+.options select {
     font-family: "Poppins", sans-serif;
 }
-.input-wrapper{
+
+.input-wrapper {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -100,19 +104,18 @@ input[type="color"]::-moz-color-swatch {
     background-color: #dadada;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%; /* Adjusted width for smaller screens */
+        left: 2%; /* Adjusted left position */
+        top: 4%; /* Adjusted top position */
+    }
+    .options {
+        justify-content: space-between; /* Spaced the buttons evenly */
+    }
+    .headingtext {
+        padding-left: 0; /* Removed padding for smaller screens */
+        text-align: center; /* Centered the text */
+    }
+}
